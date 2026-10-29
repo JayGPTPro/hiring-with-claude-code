@@ -1,0 +1,132 @@
+{
+  "_how": "Top level: rubric_locked_at and scoring_guide_sha256, written by build_briefs.py --lock-guide before the first submission arrives. Then one object per finalist slug. Claude writes received (the date the work came; a file of any name in challenge/submissions/ also counts), summary, what_came, track, clarifying_questions (every question the finalist asked, with the date and the answer you gave; [] when none), assumptions_stated (their own words; [] when none) and the claude block, each note against SCORING-GUIDE.md with a quote. YOU write the founder block first, here or on REVIEW.html: four questions per part, each [score 1 to 5, one line of evidence]. Claude's notes for a part are hidden on the page until your four ratings for that part are in. Parts: core (the shared task, the fair comparison) and specialist (judged against its own track, not compared across tracks). walkthrough: one decision from the submission and the three short questions, with your notes. decision: open / hire for this role / runner-up / no, close with thanks. internal_note: anything the candidate must not hear.",
+  "rubric_locked_at": "2026-10-21",
+  "scoring_guide_sha256": "written by build_briefs.py --lock-guide",
+  "first-last": {
+    "track": "Listings track",
+    "sent": "2026-10-21",
+    "due": "2026-10-26",
+    "received": "2026-10-26, by email",
+    "paid": "",
+    "what_came": "A two-page document and one spreadsheet tab",
+    "summary": "Two or three sentences: what the submission does, in plain words.",
+    "clarifying_questions": [
+      {
+        "date": "2026-10-22",
+        "question": "Their question, word for word",
+        "answer": "What you answered",
+        "about": "which missing information it was about"
+      }
+    ],
+    "assumptions_stated": [
+      "Their stated reading of an open point, quoted"
+    ],
+    "founder": {
+      "rated_at": "2026-10-27 08:10",
+      "core": {
+        "understood_goal": [
+          4,
+          "one line of evidence"
+        ],
+        "relevant_work": [
+          4,
+          "one line"
+        ],
+        "reasoning_visible": [
+          3,
+          "one line"
+        ],
+        "would_use_it": [
+          4,
+          "one line"
+        ]
+      },
+      "specialist": {
+        "understood_goal": [
+          4,
+          "one line"
+        ],
+        "relevant_work": [
+          4,
+          "one line"
+        ],
+        "reasoning_visible": [
+          4,
+          "one line"
+        ],
+        "would_use_it": [
+          3,
+          "one line"
+        ]
+      }
+    },
+    "claude": {
+      "written_at": "2026-10-27 09:00",
+      "core": {
+        "understood_goal": [
+          4,
+          "note with a quote from the submission"
+        ],
+        "relevant_work": [
+          4,
+          "note"
+        ],
+        "reasoning_visible": [
+          3,
+          "note"
+        ],
+        "would_use_it": [
+          4,
+          "note"
+        ]
+      },
+      "specialist": {
+        "understood_goal": [
+          4,
+          "note"
+        ],
+        "relevant_work": [
+          4,
+          "note"
+        ],
+        "reasoning_visible": [
+          4,
+          "note"
+        ],
+        "would_use_it": [
+          3,
+          "note"
+        ]
+      },
+      "read": "Three or four sentences: the strongest point, the clearest gap, what it says about the work in this role."
+    },
+    "walkthrough": {
+      "date": "2026-10-27",
+      "decision": "The one choice from the submission you ask about",
+      "quote": "Their words, from the submission",
+      "questions": [
+        "Walk me through this one choice.",
+        "What trade-off did you make?",
+        "What would you change with another hour?"
+      ],
+      "notes": [
+        [
+          "Walk me through it",
+          "your notes"
+        ],
+        [
+          "Trade-off",
+          "your notes"
+        ],
+        [
+          "Another hour",
+          "your notes"
+        ]
+      ],
+      "held": "What held up when they explained it, and what did not."
+    },
+    "decision": "open",
+    "internal_note": "",
+    "founder_notes": ""
+  }
+}

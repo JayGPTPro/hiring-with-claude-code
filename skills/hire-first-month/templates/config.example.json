@@ -1,0 +1,103 @@
+{
+  "_note": "Copy to hiring/first-month/config.json and fill it. structure has no default: ask the founder contractor, eor or entity before the offer is written. pay.transfer_fee is founder, hire or split. Dates are YYYY-MM-DD; a Monday start is best. Every level string in systems[] starts with None, View, Edit or Full; the rest of the line is free text. plan.py reads the outcomes from criteria.md (lines 'By day N: ...') and the five tasks from task-log.md; 'outcomes' ([{\"by_day\": 14, \"outcome\": \"...\", \"done\": \"...\"}]) is used only when criteria.md has none; 'five_tasks' replaces task-log.md when it is not empty. 'day30_extra' adds rows to the day-30 check-in. Per system, 'login' (default Personal account) and 'two_factor' (default authenticator app) show on the access page. No real credentials in this file, ever.",
+  "brand": "Your Brand",
+  "signoff": "Your first name",
+  "hire": {
+    "slug": "first-last",
+    "name": "First Last",
+    "first_name": "First",
+    "city": "Their city",
+    "country": "Their country",
+    "role": "AI & Amazon Operations Specialist"
+  },
+  "offer_date": "2026-10-20",
+  "start_date": "2026-11-09",
+  "pay": {
+    "monthly": 2000,
+    "currency": "USD",
+    "weekly_weeks": 8,
+    "pay_day": "Friday",
+    "rail": "Wise",
+    "transfer_fee": "",
+    "rail_note": "Wise, Payoneer, PayPal, or Deel when you want the paperwork done. Fees change; check each one's live calculator before the first payment."
+  },
+  "raise": {
+    "at_6_months_pct": 10,
+    "at_12_months_pct": 10,
+    "_note": "A common pattern is ten to fifteen percent at six months and again at twelve. It is a pattern, not a rule. You set the numbers; the letter prints them."
+  },
+  "overlap": {
+    "hours": 4,
+    "hire_window_local": "10:00 to 14:00",
+    "hire_tz": "Europe/Bucharest",
+    "founder_tz": "Asia/Jerusalem"
+  },
+  "structure": "",
+  "structure_options": [
+    "contractor",
+    "eor",
+    "entity"
+  ],
+  "eor_name": "",
+  "probation_days": 90,
+  "probation_notice": "one week",
+  "notice_after": "one month",
+  "agreement_when": "tomorrow",
+  "first_deliverable": "The first of the five task maps, written step by step, with the time it takes and what breaks when it is wrong. Finished by Friday of week one.",
+  "manual_name": "Operations manual for this role",
+  "buddy": "",
+  "checkpoint_days": [
+    7,
+    14,
+    30
+  ],
+  "systems": [
+    {
+      "name": "Seller Central",
+      "owner": "The seller account stays under the founder as primary user. The hire gets a secondary user on their own email.",
+      "vault": "Amazon",
+      "grant_via": "Settings, User Permissions, invite by email",
+      "week1": "View Only: Catalog, Inventory, Reports",
+      "month1": "Edit: Catalog (each change approved by the founder). View: Inventory, Reports",
+      "month3": "Edit: Catalog, Inventory, Advertising, Reports. View: Orders, only once the founder approves it (it shows buyer names and addresses)",
+      "never": "Administrator, Settings, Account Info, bank and deposit methods, tax, User Permissions",
+      "notes": "Two-step verification on an authenticator app, not SMS. Review permissions every six months and at every role change. Agencies go through Authorized Partners, never a user login.",
+      "login": "Personal account",
+      "two_factor": "authenticator app"
+    },
+    {
+      "name": "Google Workspace",
+      "owner": "Company domain. Super admin stays the founder. The hire gets their own mailbox on the company domain.",
+      "vault": "Own account, no shared password",
+      "grant_via": "Admin console, Users, add user; Drive sharing per folder",
+      "week1": "View: the shared Operations drive",
+      "month1": "Edit: Operations and Content drives",
+      "month3": "Edit: Operations, Content and Launches drives; shared calendar",
+      "never": "Super admin, billing, domain and security settings",
+      "notes": "Two-step verification enforced for the account. Company mailbox only; nothing on a personal Gmail.",
+      "login": "Personal account",
+      "two_factor": "authenticator app"
+    },
+    {
+      "name": "Password manager",
+      "owner": "Team plan owned by the founder. The hire gets their own private vault plus read access to shared vaults per area.",
+      "vault": "Own private vault",
+      "grant_via": "Team admin, invite member, assign vaults",
+      "week1": "View: own vault plus the Content vault",
+      "month1": "View: Content, Amazon and Community vaults",
+      "month3": "View: Content, Amazon, Community and Ads vaults",
+      "never": "Team owner or admin, the Finance vault",
+      "notes": "Set up before the offer goes out. One shared vault per system area. One-off secrets go through an expiring share. Nothing in WhatsApp or email, ever.",
+      "login": "Personal account",
+      "two_factor": "authenticator app"
+    }
+  ],
+  "five_tasks": [],
+  "outcomes": [],
+  "day30_extra": [
+    {
+      "expected": "One expected result you added after the decision, in plain words.",
+      "evidence": "Where you will look for it."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "brand": "Your Brand",
+  "doc_label": "Test task",
+  "signoff": "Your first name",
+  "fee_usd": 100,
+  "days": 5,
+  "expected_hours": 2,
+  "real_material": null,
+  "sent": "Wednesday, October 21",
+  "due": "Monday, October 26, end of day (your time)",
+  "payment": "by bank transfer after you submit, to any account you choose",
+  "submit_to": "hiring@yourdomain.example",
+  "role": {"pay": "USD 1,200", "hours": 40, "start": "Monday, November 2"},
+  "core_task": "challenge/core-task.md",
+  "finalists": [
+    {
+      "slug": "first-last",
+      "name": "First Last",
+      "track": "Listings track",
+      "task_title": "The task as a title",
+      "task": "Part 1: the shared task. Part 2 (listings track): the specialist part in one sentence.",
+      "terms_sent": null
+    }
+  ],
+  "_how": "fee_usd is optional: a number is one fee for everyone, and you may use the work; null or 0 means unpaid, and the work is never used. Ask the founder how long the task takes (expected_hours, said in the brief as 'about N hours') and whether it uses real business material (real_material: a real list, a real file, work they might use). An unpaid task over about an hour or on real material gets a printed recommendation to pay; the founder decides. days is the return window. role is the pay, weekly hours and start date in the terms message, the same for everyone. core_task is the shared part every finalist gets. track names the specialist part; parts in different tracks are not compared. terms_sent stays null until the terms went out in writing. demo_badge (optional) sets or turns off the FICTIONAL DEMO badge; by default it shows only when criteria.md says FICTIONAL DEMO."
+}

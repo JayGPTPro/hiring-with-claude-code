@@ -1,0 +1,47 @@
+{
+  "_note": "One file per candidate: hiring/out/verification/<slug>.json. Claude fills it, claim_check.py renders it. Statuses: Verified, Unverified, Clarification needed. Sources: the candidate's own documents, a source they supplied, or one public company page. A result that may not be this person is not used and not written here.",
+  "candidate": "Ana Petrescu",
+  "slug": "ana-petrescu",
+  "checked": "YYYY-MM-DD",
+  "by": "[you] with Claude",
+  "purpose": "Check only the job claims the user named: the dates at [Company] and the brand she says she ran.",
+  "retention": "YYYY-MM-DD (the delete date from criteria.md)",
+  "claims": [
+    {
+      "claim": "I ran a brand for three years",
+      "short": "Ran a brand for three years: the dates differ",
+      "from": "message",
+      "sources": [
+        {"name": "CV, supplied by her", "says": "Brand Manager, [Company]\nJan 2024 to Feb 2025", "detail": "One title, 14 months"},
+        {"name": "Questionnaire answer", "says": "Marketplace Specialist from Jan 2024, Brand Manager from Sep 2024", "detail": "Two titles"}
+      ],
+      "status": "Clarification needed",
+      "question": "Could you walk me through the dates?",
+      "context": "The message says three years, the CV shows January 2024 to February 2025, and the questionnaire shows two titles.",
+      "note": "A difference between her own documents, not a finding about the person."
+    },
+    {
+      "claim": "Ran the Amazon store for [Brand], 40 ASINs",
+      "short": "[Brand] store, 40 ASINs",
+      "from": "CV",
+      "sources": [{"name": "[Brand] storefront, public", "says": "The brand sells on Amazon US, about 40 listings"}],
+      "status": "Verified",
+      "note": "The store exists and matches the size. Her own part is a question for the screen share."
+    },
+    {
+      "claim": "Built the weekly restock plan",
+      "short": "Restock plan",
+      "from": "CV",
+      "sources": [],
+      "status": "Unverified",
+      "question": "Can you show the restock plan on screen?",
+      "note": "Internal work: no public trace. Test it on a screen share."
+    }
+  ],
+  "not_checked": [
+    "Every claim the user did not name",
+    "Internal numbers (sales, stock, time saved): not public; they are questions for the call",
+    "Criminal record, credit and degree checks: they need consent and a licensed service, and are not part of this step"
+  ],
+  "not_looked_at": "Family, relationships, religion, health, politics, age, origin, appearance, personal social media. No search on the person's name."
+}

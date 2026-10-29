@@ -1,0 +1,19 @@
+{
+  "_how": "Step 1 is written by decision_challenge.py seal, never by hand: prefer, why, by, written_at and a fingerprint. Step 2 is Claude's challenge block, written after the seal and dated after it, from the files in hiring/ only: for, against, missing, next_check (each a list of {point, source}) and recommendation. Each point names the file or stage it comes from. against and missing are never empty; if the file is thin, say so. Step 3 is yours: after, what you decided and whether the challenge changed anything.",
+  "sealed": {
+    "prefer": "first-last",
+    "why": "Who you prefer and why, in your own words, before Claude says anything.",
+    "by": "Your first name",
+    "written_at": "2026-10-29 08:40",
+    "sha256": "written by the seal command"
+  },
+  "challenge": {
+    "written_at": "2026-10-29 09:05",
+    "for": [{"point": "The strongest evidence for the choice", "source": "where it comes from"}],
+    "against": [{"point": "The strongest evidence against it", "source": "where it comes from"}],
+    "missing": [{"point": "What the file does not show yet", "source": "why it matters"}],
+    "next_check": [{"point": "The next check that would close the biggest gap", "source": "when and how"}],
+    "recommendation": "Two or three sentences after the challenge. A score is never a reason to stop thinking."
+  },
+  "after": {"decision": "What you decided, and whether the challenge changed anything.", "by": "Your first name", "written_at": "2026-10-29 10:00"}
+}

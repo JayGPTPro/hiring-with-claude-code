@@ -1,0 +1,299 @@
+Hiring skills: end-to-end test run
+Run on 2026-10-28 with Python 3.14.7. Fixture: 4 fictional applications, 2 questionnaires, 2 interviews, 2 finalists, 1 reference call, 1 hire.
+Each pipeline check runs twice, on a fresh copy: from inside hiring/ and from the folder above it.
+
+hiring/ parent  check
+PASS            repo: no script imports a network module (urllib, socket, requests, http.client and the like)
+PASS            repo: 30 scripts across the 5 skills
+PASS            repo: nothing in the repo still teaches click counting
+PASS            repo: no em or en dash in any file of the repo
+PASS            repo: every SKILL.md frontmatter parses as YAML, name = folder, description 1024 characters or less
+PASS            v4 10: screen-candidates SKILL.md is under 2,500 words (2406)
+PASS            v4 5: SKILL.md scores each blind file in its own subagent that sees only that file and the rubric
+PASS            v4 7: one rule for missing evidence: Not shown / Ask, never a 0
+PASS            v4 8: SKILL.md writes a control CV from criteria.md when none exists
+PASS            v4 9: script paths work after install (.claude/skills/...), no missing research file
+PASS            v4 TRACK: one meaning, the areas in criteria.md
+PASS    PASS    screen-candidates/build_board.py (stops before any scores or dossiers)
+PASS    PASS    screen-candidates/waiting.py (stops before any dossiers)
+PASS    PASS    screen-candidates/evidence_map.py (stops before any dossiers)
+PASS    PASS    screen-candidates/parse_inbox.py
+PASS    PASS    screen: parse_inbox writes applications.json and COVERAGE.md
+PASS    PASS    screen: parse_inbox reads all 4 applications and the budget
+PASS    PASS    screen-candidates/redact.py
+PASS    PASS    screen: redact writes blind copies, map, HIDDEN.md, the control C000
+PASS    PASS    screen: redact gives every application a three-digit blind id
+PASS    PASS    hidden text: the instruction is not in the blind copy the scoring reads
+PASS    PASS    hidden text: the blind copy says hidden text was found and removed
+PASS    PASS    hidden text: hidden.json and HIDDEN.md list only the candidate with hidden text, 3 findings
+PASS    PASS    redact: the name is gone from the blind copy
+PASS    PASS    screen-candidates/redact.py (clean variant)
+PASS    PASS    hidden text: the blind copy equals the same application written without the hidden lines
+PASS    PASS    screen-candidates/build_board.py
+PASS    PASS    screen: build_board writes the board, CSV, SUMMARY, MORNING, Evidence Maps, drafts
+PASS    PASS    screen: no draft is written for a message the Log already says was sent (Mara: Invite sent)
+PASS    PASS    hidden text: flagged on the board with the scores exactly as judged (30 and 28)
+PASS    PASS    hidden text: the Evidence Map page shows the box and says the score did not use it
+PASS    PASS    hidden text: the morning list puts it under decisions waiting
+PASS    PASS    screen: thin file shows 'Insufficient evidence. Follow-up required.' instead of a number
+PASS    PASS    screen: board header counts the applications and carries the demo badge
+PASS    PASS    screen: the script tag in a name is shown escaped on the board
+PASS    PASS    screen: the control CV sits inside its band
+PASS    PASS    screen: every draft says it was not sent
+PASS    PASS    screen-candidates/evidence_map.py
+PASS    PASS    screen-candidates/waiting.py
+PASS    PASS    screen: waiting.py lists Tom (no reply sent) and not Mara (invite sent)
+PASS    PASS    screen-candidates/compare.py (stops before responses.csv)
+PASS    PASS    screen-candidates/make_questionnaire.py
+PASS    PASS    questionnaire: make_questionnaire writes QUESTIONNAIRE.md
+PASS    PASS    questionnaire: QUESTIONNAIRE.md carries the four areas and the situation question, no placeholder left
+PASS    PASS    questionnaire: no web form or Apps Script receiver is written any more
+PASS    PASS    screen-candidates/compare.py
+PASS    PASS    questionnaire: compare writes COMPARE.html and one section draft per candidate
+PASS    PASS    questionnaire: COMPARE says SELF-RATINGS, NOT PERFORMANCE and marks the blank example
+PASS    PASS    questionnaire: a javascript: CV link is shown as text, never as a link
+PASS    PASS    questionnaire: a Google Forms export is read directly (grid ratings, checkbox picks, ask in words, situation)
+PASS    PASS    questionnaire: a first name on the form is matched to the dossier, and the run says so
+PASS    PASS    questionnaire: when a person sent the form twice, the later answers are used
+PASS    PASS    screen-candidates/append_sections.py (skips drafts that still have __)
+PASS    PASS    questionnaire: an unscored section never lands in a dossier
+PASS    PASS    screen-candidates/append_sections.py
+PASS    PASS    questionnaire: append_sections adds the section and a Log line to the dossier
+PASS    PASS    screen-candidates/timeline.py (writes timeline.json with placeholders, then stops)
+PASS    PASS    questionnaire: timeline.py leaves a timeline.json to fill
+PASS    PASS    screen-candidates/timeline.py
+PASS    PASS    questionnaire: the timeline draft has the four steps with dates and says it is not sent
+PASS    PASS    screen-candidates/compare.py (old fixed-column responses.csv)
+PASS    PASS    questionnaire: the old fixed-column responses.csv is still read
+PASS    PASS    questionnaire: a form name that matches no dossier is listed for the founder to check
+PASS    PASS    interview-debrief/claim_check.py (stops before any report)
+PASS    PASS    interview-debrief/claim_check.py
+PASS    PASS    claim check: claim_check.py writes one page and one .md per candidate, and the summary
+PASS    PASS    claim check: a date conflict shows both sources and the neutral question
+PASS    PASS    claim check: the report has '## Summary' and '## Questions for the call', no colour verdict
+PASS    PASS    claim check: nothing on any page records a result set aside as maybe not this person
+PASS    PASS    claim check: the synonym 'Confirmed' is read as Verified
+PASS    PASS    claim check: --append adds '## Claim verification' to the dossier once
+PASS    PASS    interview-debrief/claim_check.py (second run, nothing changed)
+PASS    PASS    claim check: a second --append does not duplicate the section
+PASS    PASS    interview-debrief/claim_check.py (a re-check after a status changed)
+PASS    PASS    claim check: a re-check replaces the dossier section instead of keeping the old one
+PASS    PASS    interview-debrief/claim_check.py (an unknown status)
+PASS    PASS    claim check: an unknown status stops the run and names it, never silently Unverified
+PASS    PASS    interview-debrief/claim_check.py (a set_aside field)
+PASS    PASS    claim check: a report with a set_aside field is refused: a result that may not be this person is not recorded
+PASS    PASS    interview-debrief/prep.py (stops before prep.json)
+PASS    PASS    interview-debrief/prep.py
+PASS    PASS    interviews: prep.py writes PREP.html
+PASS    PASS    contract: PREP fills Evidence / Missing / Questions from the dossier Evidence Map when prep.json leaves them out
+PASS    PASS    contract: PREP shows the claim-check questions from out/verification/<slug>.md
+PASS    PASS    interviews: PREP shows 1 / 3 / 5 anchors and the your-score-first sheet
+PASS    PASS    interview-debrief/stats.py
+PASS    PASS    interviews: stats.py writes stats.json and INTERVIEWER_COACH.md per call
+PASS    PASS    interviews: stats counts the core questions asked (5 of 6 for Mara)
+PASS    PASS    interviews: word share carries the coaching label, not a candidate score
+PASS    PASS    interviews: the speaker check flags the short line after a same-label question
+PASS    PASS    interviews: a number with no follow-up question is listed for the coach
+PASS    PASS    interview-debrief/scoresheet.py (creates your sheet, then stops)
+PASS    PASS    interviews: no CANDIDATE_DEBRIEF.md before your sheet exists
+PASS    PASS    interview-debrief/scoresheet.py (refuses an incomplete sheet)
+PASS    PASS    interviews: an incomplete sheet is refused and the analysis stays closed
+PASS    PASS    interview-debrief/scoresheet.py (accepts a complete sheet whose evidence starts with a [MM:SS] minute)
+PASS    PASS    interviews: a complete sheet opens CANDIDATE_DEBRIEF.md with your scores first
+PASS    PASS    interviews: a 'not asked' row is left out of your total
+PASS    PASS    interview-debrief/scoresheet.py (totals Claude's column)
+PASS    PASS    interviews: Claude's column is read when its evidence starts with a [MM:SS] minute
+PASS    PASS    interview-debrief/scoresheet.py (creates Zoe's sheet)
+PASS    PASS    interview-debrief/scoresheet.py (Zoe, speaker check copied in)
+PASS    PASS    interviews: the disputed line is UNVERIFIED until checked against the recording
+PASS    PASS    interview-debrief/ledger.py
+PASS    PASS    interviews: ledger.py writes LEDGER.html and LEDGER.md
+PASS    PASS    interviews: the ledger has the two tabs, Candidate evidence and My interviewing
+PASS    PASS    interviews: the ledger keeps a ledger row whose value starts with a [MM:SS] minute
+PASS    PASS    interview-debrief/md_view.py
+PASS    PASS    interviews: md_view writes the readable views
+PASS    PASS    paid-challenge/build_briefs.py (stops before config.json)
+PASS    PASS    paid-challenge/build_briefs.py (refuses while SCORING-GUIDE.md is missing)
+PASS    PASS    challenge: no brief is built before the scoring guide exists (the prompts ask for it with the brief)
+PASS    PASS    paid-challenge/build_briefs.py (refuses a brief while terms_sent is null)
+PASS    PASS    challenge: no brief for a finalist before the terms went out in writing
+PASS    PASS    paid-challenge/build_briefs.py (--lock-guide, then the briefs)
+PASS    PASS    challenge: --lock-guide records the date and a fingerprint of SCORING-GUIDE.md in review.json
+PASS    PASS    challenge: build_briefs writes each brief page and trial agreement
+PASS    PASS    challenge: the brief layout check passes (Goal, Context, Task, effort, pay, deadline, how to send)
+PASS    PASS    challenge: the agreement says the full fee is paid for any submission made in good faith
+PASS    PASS    paid-challenge/build_briefs.py (a second lock after an edit is refused)
+PASS    PASS    challenge: the guide cannot be locked again after it changed
+PASS    PASS    paid-challenge/review_board.py
+PASS    PASS    challenge: review_board writes REVIEW.html and a walkthrough per finalist
+PASS    PASS    challenge: the review board shows no click column and no click count
+PASS    PASS    challenge: the review board names the locked scoring guide and raises no change warning
+PASS    PASS    paid-challenge/review_board.py (the guide was edited after the lock)
+PASS    PASS    challenge: the review board warns when SCORING-GUIDE.md changed after it was locked
+PASS    PASS    paid-challenge/decision_challenge.py seal
+PASS    PASS    paid-challenge/decision_challenge.py seal (a second seal is refused)
+PASS    PASS    paid-challenge/decision_challenge.py
+PASS    PASS    challenge: the Decision Challenge shows the sealed preference, then For / Against / Missing / Next check
+PASS    PASS    challenge: before any reference call, the Decision Challenge says plainly there is no reference summary
+PASS    PASS    paid-challenge/decision_challenge.py (the sealed text was edited)
+PASS    PASS    challenge: an edited seal hides Claude's challenge
+PASS    PASS    paid-challenge/decision_challenge.py (an empty against column)
+PASS    PASS    challenge: an empty Against column is refused: exit 1, and the challenge is not shown
+PASS    PASS    paid-challenge/decision_challenge.py (an empty missing column)
+PASS    PASS    challenge: an empty Missing column is refused: exit 1, and the challenge is not shown
+PASS    PASS    challenge: the parts the flow never used are gone (links, core grid, job preview, beacon notes)
+PASS    PASS    challenge: the runner-up rule allows a real second role, said plainly as not a promise
+PASS    PASS    challenge: the runner-up and closing drafts wait until the hire has signed
+PASS    PASS    challenge: no leftovers from the real search (today.txt, the digest example)
+PASS    PASS    challenge: SKILL.md names the scoring guide as its own output
+PASS    PASS    reference-call/summary.py (stops before any notes)
+PASS    PASS    reference-call/call_sheet.py (writes the referees file, then stops)
+PASS    PASS    reference-call/call_sheet.py (drafts the open questions, then stops)
+PASS    PASS    contract: the open questions are drafted from CANDIDATE_DEBRIEF.md 'Open questions'
+PASS    PASS    contract: the draft also carries the claim-check questions from out/verification/<slug>.md
+PASS    PASS    reference-call/call_sheet.py (a 'Status: reviewed' line is not the user's yes)
+PASS    PASS    references: without the user's yes recorded, no guide is built and the script says to ask in chat
+PASS    PASS    reference-call/call_sheet.py (approved in chat)
+PASS    PASS    references: call_sheet writes the guide as .md and .html
+PASS    PASS    references: the guide has the two core questions and leaves the current employer off
+PASS    PASS    references: the guide records when the questions were approved in chat
+PASS    PASS    reference-call/summary.py
+PASS    PASS    references: summary writes the summary and the board
+PASS    PASS    references: answers are organised as Concrete example / Vague opinion / Follow-up, one opinion marked
+PASS    PASS    paid-challenge/decision.py
+PASS    PASS    decision: decision.py writes DECISION.md
+PASS    PASS    contract: decision.py reads your FOUNDER_SCORES.md total with 'not asked' left out
+PASS    PASS    contract: decision.py reads the reference summary's concrete examples
+PASS    PASS    decision: a finalist with no reference summary is named plainly, not left blank
+PASS    PASS    contract: decision.py reads the questionnaire anchors and the screen scores
+PASS    PASS    decision: the questionnaire column counts the situation anchors, with no fixed PPC label
+PASS    PASS    decision: the total shows once every stage is in, with the sealed preference below
+PASS    PASS    paid-challenge/decision.py (a PDF submission, and one recorded only as received)
+PASS    PASS    bug: a submission saved as a PDF under another name, or recorded as received, counts as submitted
+PASS    PASS    contract: decision.py keeps 'Insufficient evidence' as text, never a number
+PASS    PASS    first-30-days/plan.py (stops before config.json)
+PASS    PASS    first-30-days/plan.py
+PASS    PASS    first-30-days: plan.py writes the eleven files
+PASS    PASS    first-30-days: the day-30 check-in has the four columns
+PASS    PASS    first-30-days: the plan reads the five tasks from task-log.md
+PASS    PASS    first-30-days/plan.py (outcomes-wrapped)
+PASS    PASS    bug: a wrapped outcome is read whole, not cut at the end of its first line
+PASS    PASS    first-30-days/plan.py (outcomes-bullets)
+PASS    PASS    bug: bullet outcomes under a 'Results' heading are read from criteria.md
+PASS    PASS    first-30-days/plan.py (outcomes-none)
+PASS    PASS    bug: no outcomes in criteria.md gives a loud warning, never a silent fallback
+PASS    PASS    first-30-days: the example config sets no structure by default
+PASS    PASS    first-30-days/plan.py (offer-no-structure)
+PASS    PASS    first-30-days: --offer refuses until the founder chose contractor, eor or entity
+PASS    PASS    first-30-days/plan.py (plan-no-structure)
+PASS    PASS    first-30-days: without a structure the 30-day plan is still written and the offer waits, said plainly
+PASS    PASS    first-30-days/plan.py (offer-only)
+PASS    PASS    first-30-days: --offer writes only the offer and the contract checklist
+PASS    PASS    first-30-days: the offer carries a not-legal-advice line naming a local adviser or an employer of record
+PASS    PASS    first-30-days: a contractor letter uses contractor terms, not employment terms
+PASS    PASS    first-30-days: who pays the transfer fee comes from the config
+PASS    PASS    first-30-days/plan.py (offer-entity)
+PASS    PASS    first-30-days: an employment letter keeps the employment terms, and the fee line follows the config
+PASS    PASS    first-30-days/plan.py (offer-kept)
+PASS    PASS    first-30-days/plan.py (rerun after the offer was edited)
+PASS    PASS    first-30-days: a rerun after the yes keeps the offer you edited
+PASS    PASS    first-30-days: no stale label or prices (the one question, EOR prices)
+PASS    PASS    first-30-days: the example gives no Orders view before the day-30 approval
+PASS    PASS    first-30-days/plan.py (orders-week1)
+PASS    PASS    first-30-days: Orders in week 1 prints a warning about buyer names and addresses
+PASS    PASS    first-30-days: a Monday start gets no 'fell on a weekend' note, and day 7 is a working day
+PASS    PASS    screen-candidates/build_board.py (again, after the other skills appended to the dossiers)
+PASS    PASS    contract: the board still reads dossiers that carry the Questionnaire and Claim verification sections
+PASS    PASS    screen-candidates/waiting.py (again, after the appended Log lines)
+PASS    PASS    contract: Log lines added by other skills do not stop or start the reply clock
+PASS    PASS    screen-candidates/build_board.py (bug 1: after a Decline sent Log line)
+PASS    PASS    bug 1: the morning list drops a flagged person once the founder logged that the reply was sent
+PASS    PASS    screen-candidates/build_board.py (bug 1: no readable date, no reply)
+PASS    PASS    bug 1: a flagged person nobody answered stays on the list, even when the Card date is unreadable
+PASS    PASS    screen-candidates/build_board.py (bug 2: one application not scored yet)
+PASS    PASS    bug 2: MORNING.md names the application in inbox/ that is not scored yet
+PASS    PASS    bug 2: the board run warns about it too
+PASS    PASS    paid-challenge/build_briefs.py (bug 3: a six-column core task)
+PASS    PASS    bug 3: the core task table in the brief has a header cell for every column (6 and 6)
+PASS    PASS    bug 3: the wider table keeps the core task style (class items, '#' first)
+PASS    PASS    bug 4: the access log is not pre-filled with 'Week 1 levels granted'
+PASS    PASS    interview-debrief/ledger.py (bug 6: a stray CANDIDATE_REVIEW.md)
+PASS    PASS    bug 6: ledger.py names the stray copy and says it reads CANDIDATE_DEBRIEF.md only
+PASS    PASS    interview-debrief/scoresheet.py (bug 6: a stray CANDIDATE_REVIEW.md)
+PASS    PASS    bug 6: scoresheet.py names the stray copy too
+PASS    PASS    bug 6: SKILL.md says the debrief is always CANDIDATE_DEBRIEF.md, even when another name is asked for
+PASS    PASS    screen-candidates/build_board.py (bug 7: date from today.txt)
+PASS    PASS    bug 7: build_board takes the date from today.txt and says so, on screen and in MORNING.md
+PASS    PASS    screen-candidates/waiting.py (bug 7: date from today.txt)
+PASS    PASS    reference-call/call_sheet.py (bug 7: date from today.txt)
+PASS    PASS    bug 7: the reference guide is dated from today.txt
+PASS    PASS    bug 7: parse_inbox.py runs under python -I (its helper is found without the script folder on sys.path)
+PASS    PASS    bug 7: redact.py runs under python -I (its helper is found without the script folder on sys.path)
+PASS    PASS    bug 7: waiting.py runs under python -I (its helper is found without the script folder on sys.path)
+PASS    PASS    screen-candidates/compare.py (bug 7: date from today.txt)
+PASS    PASS    bug 7: compare.py stamps the today.txt date, not the computer clock
+PASS    PASS    screen-candidates/build_board.py (bug 7: --today wins over today.txt)
+PASS    PASS    bug 7: an explicit --today still wins over today.txt
+PASS    PASS    screen-candidates/build_board.py (bug 7: today.txt saved with a BOM)
+PASS    PASS    bug 7: a today.txt saved with a BOM still works
+PASS    PASS    screen-candidates/build_board.py (bug 7: unreadable today.txt)
+PASS    PASS    bug 7: an unreadable today.txt stops the run with a plain message
+PASS    PASS    interview-debrief/stats.py (v5: paraphrased questions)
+PASS    PASS    v5: paraphrased core questions split over lines are matched (1 to 4 and 6 asked, 5 not asked)
+PASS    PASS    v5: the coach file has a 'Questions I covered' table filled from the match, for a person to correct
+PASS    PASS    interview-debrief/stats.py (v5: after a correction in the coach file)
+PASS    PASS    interview-debrief/ledger.py (v5: after a correction in the coach file)
+PASS    PASS    v5: the correction in the coach file is what the ledger and the headline show (6 of 6)
+PASS    PASS    interview-debrief/transcript.py (v5: conv-meet)
+PASS    PASS    interview-debrief/transcript.py (v5: conv-docx)
+PASS    PASS    interview-debrief/transcript.py (v5: conv-vtt)
+PASS    PASS    interview-debrief/transcript.py (v5: conv-sbv)
+PASS    PASS    interview-debrief/transcript.py (v5: conv-plain)
+PASS    PASS    v5: transcript.py turns a Meet .txt into [MM:SS] INTERVIEWER:/CANDIDATE: lines, ~ on estimated minutes
+PASS    PASS    v5: the Meet .docx export gives the same transcript as the .txt
+PASS    PASS    v5: Zoom .vtt: names with a company in brackets map, a turn split over cues is one line, real minutes
+PASS    PASS    v5: .sbv and plain text convert too (plain text minutes marked ~)
+PASS    PASS    interview-debrief/stats.py (v5: a converted Meet transcript)
+PASS    PASS    v5: stats reads ~ minutes, counts them, and flags no speaker swap the estimate made up
+PASS    PASS    interview-debrief/stats.py (v5: a converted Zoom transcript)
+PASS    PASS    v5: a short line Zoom put under the wrong speaker stays its own line, and the speaker check flags it
+PASS    PASS    interview-debrief/transcript.py (v5: never overwrites a transcript)
+PASS    PASS    v5: transcript.py refuses to overwrite an existing transcript
+PASS    PASS    interview-debrief/scoresheet.py (v5: debrief of a converted Meet call)
+PASS    PASS    v5: the debrief says quotes with a ~ minute are approximate
+PASS    PASS    interview-debrief/scoresheet.py (v5: date from today.txt)
+PASS    PASS    v5: scoresheet.py stamps the today.txt date
+PASS    PASS    v5: the ledger shows the average per question asked next to each total when the counts differ
+PASS    PASS    v5: the invite says an AI assistant helps organise the transcript and notes, and the decision is the founder's
+PASS    PASS    v5: no 'background check', no LinkedIn advice and no set_aside field in interview-debrief or reference-call
+PASS    PASS    v5: interview-debrief SKILL.md has the claim check and stays under 2,500 words (2319)
+PASS    PASS    v5: script paths in SKILL.md work after install (no 'python3 skills/...')
+PASS    PASS    reference-call/call_sheet.py (v5: questions with their own quotes)
+PASS    PASS    v5: the call guide never prints doubled quotation marks
+PASS    PASS    reference-call/call_sheet.py (v5: numbered open questions)
+PASS    PASS    v5: numbered open questions in the debrief are drafted too
+PASS    PASS    v5: reference-call has no terminal approval step any more (no --approve, no isatty)
+PASS    PASS    v5: reference-call says to follow privacy law when a candidate asks for their data
+PASS    PASS    v4 1: the criteria parser keeps areas from a wrapped 'areas:' line and from a bulleted list
+PASS    PASS    v4 2: the hard maximum is read from 'the most I will ever pay', 'maximum', 'ceiling' and 'hard max'
+PASS    PASS    v4 2: with no maximum in criteria.md, an ask above target is 'unknown', never 'above target, under max'
+PASS    PASS    screen-candidates/build_board.py (v4 3: drafts already there)
+PASS    PASS    v4 3: a rebuild keeps the founder's edit to a draft and adds no second apology line
+PASS    PASS    v4 3: a draft that does not exist yet is written; one the Log says was sent is not
+PASS    PASS    screen-candidates/build_board.py (v4 4: second pass)
+PASS    PASS    v4 4: a total that moved 7 points (81 then 74) is flagged, though SHARED and TRACK each moved less than 5
+PASS    PASS    v4 4: a band change (58 mixed, then 53 thin) is flagged
+PASS    PASS    v4 4: two passes in the same band and within 5 points are not flagged
+PASS    PASS    v4 6: instructions to a screener and fake system or score lines are flagged as hidden text
+PASS    PASS    v4 6: ordinary CV lines (feedback score, parent ASIN, 'Recruiters can reach me') are not flagged
+PASS    PASS    v4 6: a birth year, an age and family-status words are redacted
+PASS    PASS    v4 6: redaction leaves ordinary CV lines word for word
+PASS    PASS    screen-candidates/build_board.py (v4 9: call invites)
+PASS    PASS    v4 9: a person who sent no CV is not told 'I read your message and your CV'; one who sent both is
+PASS    PASS    v4 9: the call invite says 'one or two people who worked with you', with no 'former managers' and no 'camera on'
+PASS    PASS    safety: no input-derived <script>, onerror= or javascript: link in any generated HTML page
+PASS    PASS    safety: the test strings are shown as escaped text on every page that carries them
+PASS    PASS    style: no em or en dash in any output
+PASS            repo: every script of every skill was run above (helpers are imported by them)
+
+292 checks, 572 results, 572 passed, 0 failed.

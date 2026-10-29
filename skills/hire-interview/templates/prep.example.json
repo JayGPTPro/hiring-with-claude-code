@@ -1,0 +1,150 @@
+{
+  "_how": {
+    "what": "Written by Claude in prep mode, rendered by scripts/prep.py into out/interviews/PREP.html. Every string is escaped on the page.",
+    "core_questions": "Five questions, the same for everyone, each with anchors for a 1, a 3 and a 5 written before the first call, from criteria.md. The example below is for an Amazon operations role; write your own for your role.",
+    "tailored_question": "Question 6: one follow-up per candidate, taken from the gap in their evidence map. Its anchors are shared; the question itself is in each candidate's 'tailored'.",
+    "candidates": "One card per call. evidence: quotes copied word for word from the CV, the message or the questionnaire, with the source. missing: what is not shown yet (unknown, not weak). questions: one neutral question per gap. practical: work-only notes for question 5. Leave evidence, missing or questions out and prep.py fills them from the Evidence Map in out/candidates/<slug>.md; the claim-check questions from out/verification/<slug>.md are shown on the card either way.",
+    "one_thing": "The current 'one thing to improve' from the last INTERVIEWER_COACH.md, or empty before the first call."
+  },
+  "title": "Interview prep: [the week]",
+  "subtitle": "[Role], [business]. Built [date] from the evidence maps, the questionnaire answers and the public-source notes.",
+  "interviewer": "Sam",
+  "timezone": "US Eastern",
+  "one_thing": "",
+  "consent_line": "I record and transcribe this call so I can listen instead of typing. The recording is deleted after the decision; the written notes stay. Is that okay with you? If not, I take notes by hand.",
+  "warmup": "Two minutes of warm-up, not scored. Then the six questions in roughly this order. Normal follow-ups are fine. Score each answer before the next question.",
+  "close": "I am talking to a few people. For the people I continue with, the next step is a short test task, about two hours, paid $100, with five days to return it. I will come back to you either way by Friday.",
+  "checklist": [
+    "Recording and transcript on before the call starts. Ask for consent first thing, so the yes is on the recording.",
+    "Mac users: the invite asks them to allow their browser under Screen Recording before the call.",
+    "Read the anchors once. Write your own score and one line of evidence for each question before you read any analysis.",
+    "Before the close, look at the six boxes and ask any question that is still empty.",
+    "Camera on for everyone. Ask a follow-up on their own CV line out of order: it shows the person on the call knows the work."
+  ],
+  "practical_fit": [
+    "What hours can you commit to? Could you work at least four hours a day inside 9:00 to 17:00 US Eastern?",
+    "When could you start? What is your notice period, as a date?",
+    "Are there work commitments, such as clients, your own store or another job, that could conflict with this role? About how many hours a week, and until when?"
+  ],
+  "never_ask": "Work questions only. Never ask about family, children, relationship status, health, age, religion or plans outside work. If it comes up, do not write it down.",
+  "core_questions": [
+    {
+      "n": 1,
+      "title": "Show me something you built",
+      "ask": "Share your screen and show me one thing you built for real work. What does it do, what part did you build yourself, and where do you check the output?",
+      "anchors": {
+        "1": "Nothing on screen, or a slide about the thing. \"I can send it later.\"",
+        "3": "The real thing is on screen and they explain it, but you cannot tell which parts were theirs or how the output is checked.",
+        "5": "They run it, show the input and the check step, say what broke the first time and what they changed."
+      }
+    },
+    {
+      "n": 2,
+      "title": "One Amazon problem, end to end",
+      "ask": "Tell me about one Amazon problem you handled from beginning to end. Not what the team did. What was your part, what did you change, and what happened? If there is a number, how did you measure it?",
+      "anchors": {
+        "1": "A \"we\" story with no number, or a number with no method (\"we doubled sales\").",
+        "3": "A real problem, their own task, one number. Ownership or measurement only comes out when asked.",
+        "5": "The problem, the decisions they owned, the result with how it was measured, the caveat (what else changed), and what they learned."
+      }
+    },
+    {
+      "n": 3,
+      "title": "AI, recently, including a mistake",
+      "ask": "What did you do with AI in the last week or two at work? One real example. Where did the tool get something wrong, and how did you notice?",
+      "anchors": {
+        "1": "An opinion about AI, or \"I use ChatGPT for emails\".",
+        "3": "A concrete recent use with the tool named, but no check and no mistake.",
+        "5": "A concrete use, the check they run, a specific mistake the tool made, and what they changed because of it."
+      }
+    },
+    {
+      "n": 4,
+      "title": "The messy PPC report",
+      "ask": "This is last week's PPC sheet. The console says 24 campaigns spent money last week. I want a summary by noon. What do you check first?",
+      "setup": "Share hiring/ppc-report-week-42.csv on screen before you ask.",
+      "anchors": {
+        "1": "Goes straight to the summary or to a new automation. Does not notice that rows are missing.",
+        "3": "Notices the count or the total does not match and says they would ask, but has no order of checks.",
+        "5": "Compares campaign count and total spend with the console, asks which filters and ad types each export used, names the decision risk (ACOS looks better than it is), and says what the summary should state about the missing data."
+      }
+    },
+    {
+      "n": 5,
+      "title": "Hours, start date, other work",
+      "ask": "What hours can you commit to? When could you start? Are there work commitments, such as clients, your own store or another job, that could conflict with this role?",
+      "anchors": {
+        "1": "Vague twice, or a number that changes between answers.",
+        "3": "Clear when asked, but one commitment only comes out on a follow-up.",
+        "5": "Names hours, start date and every commitment with hours a week, before being asked twice."
+      }
+    }
+  ],
+  "tailored_question": {
+    "n": 6,
+    "title": "One tailored follow-up",
+    "anchors": {
+      "1": "Dodges twice, or the answer contradicts the CV or the questionnaire.",
+      "3": "A plausible answer that leaves one detail open.",
+      "5": "A direct answer with a detail you could check, in under a minute."
+    }
+  },
+  "candidates": [
+    {
+      "slug": "ines-carvalho",
+      "name": "Ines Carvalho",
+      "first": "Ines",
+      "call": 1,
+      "day": "Tue 20 Oct",
+      "date": "2026-10-20",
+      "time": "11:00",
+      "their_time": "16:00 in Porto",
+      "location": "Porto, Portugal",
+      "ask": "$2,400 a month",
+      "budget_fit": "in the target range",
+      "availability": "Full time, 3 weeks notice",
+      "source": "application form",
+      "strongest": "Data checking and QA; SOPs and training",
+      "evidence": [
+        {
+          "text": "An AI model reads the listing text I export and fills a first pass with pass, fail or \"not sure\". I then open Seller Central for every fail and every \"not sure\" before anything is changed.",
+          "source": "message"
+        },
+        {
+          "text": "In the first month the model marked 11 fails that were not real fails, mostly bullets it misread, so I rewrote the prompt and added the spec sheet as a column.",
+          "source": "message"
+        },
+        {
+          "text": "Weekly check time went from about 3 hours to about 70 minutes.",
+          "source": "CV"
+        },
+        {
+          "text": "Wrote the SOP for the check (6 pages, screenshots, one screen-recorded walkthrough) and trained the VA to run it alone from Aug 2025.",
+          "source": "CV"
+        },
+        {
+          "text": "I have no before number for errors, because nobody counted them before.",
+          "source": "questionnaire"
+        }
+      ],
+      "missing": [
+        "The checklist and the prompt themselves (ask to see them on screen).",
+        "How the handoff went in practice: what went wrong the first time the VA ran the check alone.",
+        "PPC depth: she says she has not managed a large ad budget. Fine for this role, Sam keeps the bids."
+      ],
+      "questions": [
+        "Share the checklist and walk me through one fail from last week. (question 1)",
+        "What did the model get wrong most recently, and how did you notice? (question 3)",
+        "When Paolo first ran the check alone, what went wrong? (question 6)"
+      ],
+      "tailored": {
+        "ask": "When Paolo first ran the check alone, what went wrong, and what did you change in the SOP because of it?",
+        "why": "The day-90 outcome is a handoff someone else runs from the SOP. The checklist itself is already covered by question 1."
+      },
+      "practical": [
+        "Three weeks notice, no other commitments named. Confirm there is no client or project she would keep.",
+        "Four hours inside 9:00 to 17:00 Eastern is 14:00 to 22:00 in Porto."
+      ]
+    }
+  ]
+}
