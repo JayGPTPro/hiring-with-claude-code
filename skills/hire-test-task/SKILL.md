@@ -1,6 +1,6 @@
 ---
 name: hire-test-task
-description: 'After the interviews, give the finalists a small test task and decide. Terms in writing first (pay, hours, start date, the same for everyone); a goal-first brief with one shared core task plus an optional specialist part, about two hours, with a fee or unpaid (unpaid work is never used); a scoring guide written with the brief and locked before the work comes in; the founder rates first, then Claude adds notes against the guide; a walkthrough of one decision; the Decision Challenge (the founder''s preference sealed first, then For / Against / Missing evidence / Next check); the offer, runner-up and closing drafts. Use when the user says "test task", "paid task", "work sample", "scoring guide", "review the submissions", "walkthrough", "seal my choice", "challenge my choice", "who do I hire", "runner-up" or "closing messages". Never sends, pays or decides.'
+description: 'After the interviews, give the finalists a small test task and decide. Terms in writing first (the deadline, the effort, the fee or unpaid, the same for everyone); a goal-first brief with one shared core task plus an optional specialist part, about two hours, with a fee or unpaid (unpaid work is never used); a scoring guide written with the brief and locked before the work comes in; the founder rates first, then Claude adds notes against the guide; a walkthrough of one decision; the Decision Challenge (the founder''s preference sealed first, then For / Against / Missing evidence / Next check); the offer, runner-up and closing drafts. Use when the user says "test task", "paid task", "work sample", "scoring guide", "review the submissions", "walkthrough", "seal my choice", "challenge my choice", "who do I hire", "runner-up" or "closing messages". Never sends, pays or decides.'
 ---
 
 # /hire-test-task
@@ -45,7 +45,8 @@ unpaid tasks). The founder decides; `build_briefs.py` prints the same line when 
 
 Copy `templates/config.example.json` to `challenge/config.json`. A fee is one fee for everyone, paid to
 every finalist who submits. `build_briefs.py --terms` drafts `out/messages/<slug>-terms-before-trial.md`:
-the same pay, hours and start date for everyone (`role`), "not an offer yet", the fee or "unpaid". The
+the task's terms, the same for everyone, and the fee or "unpaid". Add the role's pay, hours and start
+(`role`) only when the founder asks for them; otherwise the message is about the task alone. The
 founder sends it; `terms_sent` stays null until then, and no brief is built while it is null. Paid or
 not, the terms are in writing: deadline, effort, who sees the work, whether it is used, fee or "unpaid".
 

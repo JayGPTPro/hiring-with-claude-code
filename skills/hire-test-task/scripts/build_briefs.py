@@ -250,7 +250,9 @@ def write_terms(root, cfg) -> None:
     ctx = {"role_pay": role.get("pay") or "[monthly pay]", "role_hours": role.get("hours") or "[hours]",
            "start": role.get("start") or "[start date]", "signoff": cfg.get("signoff", ""),
            "task_line": terms["task_line"]}
-    if not all(role.get(k) for k in ("pay", "hours", "start")):
+    if not any(role.get(k) for k in ("pay", "hours", "start")):      # no role terms: the message is about the task only
+        body = "\n".join(l for l in body.split("\n") if "{role_pay}" not in l).replace("\n\n\n", "\n\n")
+    elif not all(role.get(k) for k in ("pay", "hours", "start")):
         print('note: "role" in config.json is missing pay, hours or start; the draft shows a blank in brackets to fill.')
     out_dir = root / "out" / "messages"
     out_dir.mkdir(parents=True, exist_ok=True)
